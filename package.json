@@ -11,9 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "mongoose": "^5.8.11"
-  },
-  "devDependencies": {
-    "kill-port": "^2.0.1"
+    "mongoose": "^5.13.20"
   }
 }
