@@ -17,7 +17,7 @@ export default function appSrc(express, bodyParser, createReadStream, crypto, ht
   app.post('/insert/', async (req, res) => {
     const login = req.query.login || req.body.login;
     const password = req.query.password || req.body.password;
-    const URL = req.query.URL || req.body.URL;
+    const URL = req.query.url || req.body.url;
     const newUser = new User({ login, password });
 
     try {
