@@ -17,21 +17,21 @@ export default function appSrc(express, bodyParser, createReadStream, crypto, ht
   app.post('/insert/', async (req, res) => {
     const login = req.query.login || req.body.login;
     const password = req.query.password || req.body.password;
-    const URL = req.query.url || req.body.url;
+    const URL = req.query.URL || req.body.URL;
     const newUser = new User({ login, password });
 
     try {
-      await m.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true});
+      await m.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true });
     } catch (e) {
       console.log(e.codeName);
     }
 
     try {
       await newUser.save();
-      
-      res.status(201).json({'Добавлено': login});
-    } catch (e){
-      res.status(400).json({'Ошибка': 'нет пароля'});
+
+      res.status(201).json({ 'Добавлено': login });
+    } catch (e) {
+      res.status(400).json({ 'Ошибка': 'нет пароля' });
     }
   });
 
