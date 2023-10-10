@@ -11,4 +11,4 @@ import appSrc from './app.js';
 const User = UserModel(m);
 
 const app = appSrc(express, bodyParser, createReadStream, crypto, http, m, User);
-app.listen(process.env.PORT);
+http.createServer(app).listen(process.env.PORT || 3000, () => console.log('Server on port 3000 was started!'));
